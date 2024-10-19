@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOFTWARE BAALII</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background: #EDE7F6; /* Light Lavender Background */
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: #000000; /* Black background */
+        }
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #FFFFFF; /* White color for header text */
+        }
+        nav {
+            display: flex;
+        }
+        nav a {
+            margin: 0 15px;
+            padding: 10px 20px; /* Add padding for buttons */
+            background: #FFFFFF; /* White background for buttons */
+            color: #090909; /* Black color for button text */
+            border-radius: 5px; /* Rounded corners for buttons */
+            text-decoration: none;
+            font-weight: 400;
+            transition: background 0.3s, color 0.3s; /* Smooth transition effect */
+        }
+        nav a:hover {
+            background: #FF9F7A; /* Lighter shade on hover */
+            color: #333; /* Dark text on hover */
+        }
+        nav a:active {
+            background: #FF9F7A; /* Lighter shade on active */
+            color: #333; /* Dark text on active */
+            transform: translateY(2px); /* Add a slight movement on active */
+        }
+
+        .hero-section {
+            background: #F9E000; /* Yellow background */
+            padding: 50px 0; /* Add padding to give it some space */
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero-text h2 {
+            font-size: 48px;
+            margin: 0 0 20px;
+            color: #000000; /* Change this to black */
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0 0 20px;
+            color: #000000; /* Change this to black */
+        }
+
+        .hero-image {
+            position: relative;
+        }
+        .hero-image img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+        }
+        .hero-image .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* Card Styles */
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+            background: #FFFFFF; /* White background */
+        }
+
+        .card {
+            background: #000000; /* Black background */
+            color: #FFFFFF; /* Set text color to white */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin: 0 0 10px;
+        }
+        .card p {
+            font-size: 14px;
+            margin: 0 0 15px;
+        }
+        .card a {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #d7e8cf; /* Yellow background for card button */
+            color: #000000; /* Black text */
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        .card a:hover {
+            background: #e65c2f; /* Darker shade on hover */
+        }
+        .card a:active {
+            background: #e65c2f; /* Darker shade on active */
+            transform: translateY(2px); /* Add a slight movement on active */
+        }
+
+        /* Trending Jobs Styles */
+        .trending-section {
+            padding: 50px;
+            background: #FFFFFF; /* Light background for contrast */
+            text-align: center;
+        }
+        .trending-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #090909; /* Title color */
+        }
+        .trending-jobs {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        .trending-job {
+            background: #000000; /* Black background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 10px; /* Add spacing between cards */
+        }
+        .trending-job h3 {
+            font-size: 20px;
+            margin: 0 0 10px;
+            color: #FFFFFF; /* Job title color */
+        }
+        .trending-job p {
+            font-size: 14px;
+            margin: 0 0 15px;
+            color: #FFFFFF; /* White text */
+        }
+        .trending-job a {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #d7e8cf; /* Yellow button */
+            color: #000000; /* Black text */
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        .trending-job a:hover {
+            background: #e65c2f; /* Darker shade on hover */
+        }
+        .trending-job a:active {
+            background: #e65c2f; /* Darker shade on active */
+            transform: translateY(2px); /* Add a slight movement on active */
+        }
+
+        /* Footer Styles */
+        footer {
+            background: black; /* Black footer */
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            color: white; /* Text color changed to white */
+        }
+        footer .social-links {
+            margin-bottom: 10px;
+        }
+        footer .social-links a {
+            margin: 0 10px;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        footer p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        footer .footer-links a {
+            margin: 0 15px;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* Make the website responsive on smaller screens */
+        @media (max-width: 768px) {
+            /* Adjust the styles for smaller screens */
+            header {
+                padding: 10px 20px;
+            }
+
+            .hero {
+                padding: 20px;
+            }
+
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+
+            .trending-jobs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .trending-job {
+                margin-bottom: 20px;
+            }
+        }
+		
+		.instagram-feed {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.instagram-post {
+    margin: 10px;
+}
+
+.instagram-post img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #F5F5F5; /* Light gray background */
+        }
+        h1 {
+            color: #2C3E50; /* Navy Blue */
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px; /* Increased width for more posts in a row */
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping of posts */
+            justify-content: center; /* Center align items */
+        }
+        .media-item {
+            margin: 15px; /* Margin around each media item */
+            padding: 10px;
+            border: 1px solid #BDC3C7; /* Light Gray */
+            border-radius: 10px;
+            background-color: #FFFFFF; /* White background */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Light shadow */
+            max-width: 300px; /* Max width for media items */
+            display: flex;
+            flex-direction: column; /* Column layout for media items */
+            align-items: center; /* Center align contents */
+        }
+        img, video {
+            width: 100%; /* Make media full width of item */
+            border-radius: 10px; /* Rounded corners for images and videos */
+        }
+		
+		.instagram-feed {
+            margin: 20px auto;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .instagram-feed h2 {
+            font-size: 24px;
+            color: #2C3E50; /* Matches your website's navy blue color */
+        }
+
+        #instagram-feed {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .media-item {
+            margin: 10px;
+            width: calc(33.333% - 20px); /* Adjusts for 3 items per row with margins */
+            box-sizing: border-box;
+        }
+
+        .media-item img, .media-item video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Slight rounding for better appearance */
+        }
+
+        @media (max-width: 768px) {
+            .media-item {
+                width: calc(50% - 20px); /* Adjust for 2 items per row on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .media-item {
+                width: 100%; /* Full width for single-column on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>SOFTWARE BAALII</h1>
+    <nav>
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About Us</a>
+        <a href="#" class="nav-link">Contact</a>
+    </nav>
+</header>
+<div class="hero-section">
+    <div class="hero">
+        <div class="hero-text">
+            <h2>Elevate Your Career with Our Job Updates!</h2>
+            <p>
+                Stay ahead in your job search and keep your inbox safe from spam! Our platform offers real-time updates on the latest job openings across various industries, ensuring you never miss an opportunity. We also provide a simple and effective way to report spam, helping to maintain a clean and secure online environment for everyone. Join our community today and empower yourself with the tools and information needed to navigate your career path confidently!
+            </p>
+        </div>
+        <div class="hero-image">
+            <img alt="Person with a laptop and a thoughtful expression" height="300" src="https://assets.onecompiler.app/42rgnj9wd/42vjktse3/baali.jpg" width="300"/>
+        </div>
+    </div>
+</div>
+<!-- Instagram Feed Section -->
+<div class="instagram-feed">
+    <h2>Instagram Feed</h2>
+    <ul id="instagram-feed"></ul> <!-- Changed this to a UL element -->
+</div>
+
+<script>
+    const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
+    const mediaUrl = `https://graph.instagram.com/me/media?fields=id,username,media_type,media_url,thumbnail_url&access_token=${accessToken}`;
+
+    // Function to fetch and display media items
+    async function fetchAndDisplayMedia() {
+        try {
+            const response = await fetch(mediaUrl);
+            const data = await response.json();
+
+            if (data.data && data.data.length > 0) {
+                const mediaList = document.getElementById('instagram-feed');
+                
+                data.data.forEach(media => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'media-item';
+
+                    let mediaContent;
+
+                    // Check the media type and display accordingly
+                    if (media.media_type === 'IMAGE') {
+                        mediaContent = `<img src="${media.media_url}" alt="Media Image">`;
+                    } else if (media.media_type === 'VIDEO') {
+                        mediaContent = `<video controls><source src="${media.media_url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                    } else {
+                        mediaContent = 'Unsupported media type';
+                    }
+
+                    listItem.innerHTML = mediaContent; // Only display media content
+                    mediaList.appendChild(listItem);
+                });
+            } else {
+                document.getElementById('instagram-feed').innerHTML = '<li>No media items found.</li>';
+            }
+        } catch (error) {
+            console.error('Error fetching media:', error);
+            document.getElementById('instagram-feed').innerHTML = '<li>Error fetching media.</li>';
+        }
+    }
+
+    // Call the function to fetch and display media
+    fetchAndDisplayMedia();
+</script>
+
+
+<div class="card-container">
+    <div class="card">
+        <h3>Job Updates</h3>
+        <p>Get the latest job openings delivered to your inbox.</p>
+        <a href="#" class="card-link">View Jobs</a>
+    </div>
+    <div class="card">
+        <h3>Register Spam</h3>
+        <p>Report spam messages to help keep everyone safe.</p>
+        <a href="#" class="card-link">Register Now</a>
+    </div>
+    <div class="card">
+        <h3>Verify Spam Companies</h3>
+        <p>Check the legitimacy of companies before applying.</p>
+        <a href="#" class="card-link">Verify Now</a>
+    </div>
+</div>
+
+<!-- Trending Job Updates Section -->
+<div class="trending-section">
+    <h2>Trending Job Updates</h2>
+    <div class="trending-jobs">
+        <div class="trending-job">
+            <h3>Software Engineer</h3>
+            <p>Location: New York, NY</p>
+            <a href="#" class="trending-link">Apply Now</a>
+        </div>
+        <div class="trending-job">
+            <h3>Data Analyst</h3>
+            <p>Location: San Francisco, CA</p>
+            <a href="#" class="trending-link">Apply Now</a>
+        </div>
+        <div class="trending-job">
+            <h3>Product Manager</h3>
+            <p>Location: Austin, TX</p>
+            <a href="#" class="trending-link">Apply Now</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="social-links">
+        <a href="#" class="fab fa-facebook"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+    <p>&copy; 2024 SOFTWARE BAALII. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </div>
+</footer>
+
+<script>
+    // Get all the buttons
+    const buttons = document.querySelectorAll('nav a, .card a, .trending-job a');
+
+    // Add an event listener to each button
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Add the 'active' class to the button
+            button.classList.add('active');
+        });
+    });
+</script>
+
+
+</body>
+</html>
